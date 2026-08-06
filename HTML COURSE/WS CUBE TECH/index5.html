@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+  </head>
+  <body>
+    <fieldset>
+      <legend>Registration Form</legend>
+      <br />
+      <form>
+        <div>
+          <label>Name:</label>
+          <input
+            type="text"
+            pattern="[a-zA-Z ]{10,40}"
+            placeholder="Enter the Name"
+            name="myName"
+            title="Enter the valid name with any digits in alphabets."
+            id="password"
+            required
+            minlength="15"
+            maxlength="30"
+            size="30"
+          />
+        </div>
+        <br />
+        <div>
+          <label>E-mail Address:</label>
+          <input
+            type="password"
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&*!])[A-Za-z\d@#$%^&*!]{8,}$"
+            title="Password must be at least 8 characters long and include one uppercase letter, one lowercase letter, one number, and one special character (@#$%^&*!)."
+            required
+          />
+        </div>
+        <br />
+        <div>
+          <label>Password</label>
+          <input
+            type="password"
+            pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@#$%^&+=]).{8,}"
+            title="Password must be at least 8 characters long, include uppercase, lowercase, a number, and a special character (@#$%^&+=)"
+            placeholder="Enter the password"
+            name="mypassword"
+            required
+          />
+        </div>
+        <br />
+        <div>
+          <label>Phone number:</label>
+          <input
+            type="tel"
+            pattern="[0-9]{10}"
+            placeholder="Enter phone number"
+            name="myphone"
+            title="Enter the valid phone number with 10 digits."
+            required
+          />
+        </div>
+        <br />
+        <div>
+          <label>Date of Birth:</label>
+          <input type="Date" name="mydate" required />
+        </div>
+        <br />
+        <div>
+          <label>Time:</label>
+          <input type="time" name="mytime" required />
+        </div>
+        <br />
+        <div>
+          <label>Week:</label>
+          <input type="week" name="myweek" required />
+        </div>
+        <br />
+        <div>
+          <label>Month:</label>
+          <input type="month" name="mymonth" required />
+        </div>
+        <br />
+        <div>
+          <label>URL</label>
+          <input type="url" required />
+        </div>
+        <br />
+        <div>
+          <label>Color:</label>
+          <input type="color" name="mycolor" required />
+        </div>
+        <br />
+        <div>
+          <label>Gender: </label>
+          Male <input type="radio" name="Gender" required /> Female
+          <input type="radio" name="Gender" required />
+        </div>
+        <br />
+        <div>
+          <label>Gender:</label>
+          <select name="Gender" id="gender" required>
+            <option value="disabled selected">Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <br />
+        <div>
+          <label>Are you eligible?:</label>
+          <input type="checkbox" name="myeligibility" required />
+        </div>
+        <br />
+        <div>
+          <label>Experience</label>
+          <input type="range" required />
+        </div>
+        <br />
+        <div>
+          <label>COURSE:</label>
+          PHP<input value="php" type="checkbox" name="salary" required />
+          JAVA<input value="java" type="checkbox" name="salary" required />
+          PYTHON<input value="python" type="checkbox" name="salary" required />
+          C<input value="c" type="checkbox" name="salary" required /> C++<input
+            value="c++"
+            type="checkbox"
+            name="salary"
+            required
+          />
+        </div>
+        <br />
+        <div>
+          <label>Expected Salary:</label>
+          15k<input id="sheet" type="radio" name="salary" /> 25k<input
+            id="sheet"
+            type="radio"
+            name="salary"
+          />
+          50k<input id="sheet" type="radio" name="salary" /> 60k<input
+            id="sheet"
+            type="radio"
+            name="salary"
+          />
+          75k<input id="sheet" type="radio" name="salary" /> 80k<input
+            id="sheet"
+            type="radio"
+            name="salary"
+          />
+        </div>
+        <br />
+        <div>
+          <label>PHOTO</label>
+          <input type="file" required />
+        </div>
+        <br />
+        <div>
+          <label>Country</label>
+          <select>
+            <option value="India">India</option>
+            <option value="Australia ">Australia</option>
+            <option value="Switzerland">SwitzeFrance</option>
+            <option value="France">France</option>
+          </select>
+        </div>
+        <br />
+        <div>
+          <label>Course</label>
+          <select>
+            <optgroup label="Frontend">
+              <option>HTML</option>
+              <option>CSS</option>
+              <option>JAVASCRIPT</option>
+            </optgroup>
+            <optgroup label="Backend">
+              <option>PHP</option>
+              <option>NODE</option>
+              <option>MONGO DB</option>
+            </optgroup>
+          </select>
+        </div>
+        <br />
+        <div>
+          <label>Car</label>
+          <select name="myCar" id="car">
+            <option value="Maruti">Maruti</option>
+            <option value="fortuner">fortuner</option>
+            <option value="Defender">Defender</option>
+          </select>
+        </div>
+        <br />
+        <div>
+          <label>COURSES</label>
+          <input type="text" list="course" />
+          <datalist id="course">
+            <option value="PHP"></option>
+            <option value="Java"></option>
+            <option value="React"></option>
+          </datalist>
+        </div>
+        <br />
+        <div>
+          <label>QUANTITY:</label>
+          <input type="number" min="0" max="50" />
+        </div>
+        <br />
+        <div>
+          Write about yourself:<br />
+          <textarea name="myText" cols="20" rows="5"></textarea>
+        </div>
+        <div>
+          <button type="submit">SAVE</button>
+          <input type="Submit" value="GO" />
+        </div>
+      </form>
+    </fieldset>
+  </body>
+</html>

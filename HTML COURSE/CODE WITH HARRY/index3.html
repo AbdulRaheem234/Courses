@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LISTS</title>
+    <style>
+      /* Google Font */
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+      /* Global Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      /* Body Styling */
+      body {
+        background: #f8f8f8;
+        color: #333;
+        text-align: center;
+        padding: 20px;
+      }
+
+      /* Heading Styling */
+      h1 {
+        font-size: 30px;
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      h2 {
+        font-size: 24px;
+        margin-top: 30px;
+        color: #ff5e62;
+      }
+
+      /* Ordered List Styling */
+      ol {
+        list-style-type: decimal;
+        margin: 20px auto;
+        padding-left: 20px;
+        max-width: 400px;
+      }
+
+      ol li {
+        font-size: 18px;
+        margin: 10px 0;
+        transition: all 0.3s ease-in-out;
+      }
+
+      ol li:hover {
+        color: #ff9966;
+        font-weight: bold;
+      }
+
+      /* Unordered List Styling */
+      ul {
+        list-style-type: square;
+        margin: 20px auto;
+        padding-left: 20px;
+        max-width: 400px;
+      }
+
+      ul li {
+        font-size: 18px;
+        margin: 10px 0;
+        transition: all 0.3s ease-in-out;
+      }
+
+      ul li:hover {
+        color: #ff9966;
+        font-weight: bold;
+      }
+
+      /* Definition List Styling */
+      dl {
+        text-align: left;
+        margin: 20px auto;
+        max-width: 600px;
+      }
+
+      dt {
+        font-size: 20px;
+        color: #ff5e62;
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+
+      dd {
+        font-size: 18px;
+        margin-left: 20px;
+        color: #777;
+        transition: all 0.3s ease-in-out;
+      }
+
+      dd:hover {
+        color: #ff9966;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>LISTS IN HTML</h1>
+    <!-- Ordered list-->
+    <h2>Steps to Bake a cake</h2>
+    <ol>
+      <li>Mix the dry ingredients.</li>
+      <li>Whisk the eggs,milk,and vanilla extract.</li>
+      <li>Combine wet and dry ingredients.</li>
+      <li>Pour the batter into the pan and bake for 30 minutes.</li>
+      <li>let the cake cool before serving.</li>
+    </ol>
+
+    <!--unordered list-->
+    <h2>Groceries to Buy</h2>
+    <ul>
+      <li>Vegetables</li>
+      <li>Chocolate</li>
+      <li>Fruits</li>
+      <li>Butter</li>
+      <li>Bread</li>
+      <li>Eggs</li>
+    </ul>
+
+    <!-- Definition list-->
+    <!-- dl = definition list, dt = definition term and dd = definition data-->
+    <!--dl>dt+dd*4-->
+
+    <h2>Programming languages</h2>
+    <dl>
+      <dt>PYTHON</dt>
+      <dd>
+        A high-level, interpreted programming language know for its ease of use.
+      </dd>
+
+      <dt>JAVASCRIPT</dt>
+      <dd>A scripting language primarily used for creating webpages.</dd>
+
+      <dt>HTML</dt>
+      <dd>The standard markup language for creating webpages.</dd>
+
+      <dt>CSS</dt>
+      <dd>
+        A stylesheet language used to describe the presentation of a document
+        written in HTML.
+      </dd>
+    </dl>
+  </body>
+</html>

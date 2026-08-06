@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <style>
+      /* Google Font */
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+      /* Global Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      /* Body Styling */
+      body {
+        background: linear-gradient(to right, #ff9966, #ff5e62);
+        color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+      }
+
+      /* Form Container */
+      fieldset {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        border: none;
+        width: 100%;
+        max-width: 600px;
+      }
+
+      legend {
+        font-size: 22px;
+        font-weight: bold;
+        color: white;
+        padding: 5px 10px;
+        background: rgba(0, 0, 0, 0.6);
+        border-radius: 8px;
+      }
+
+      /* Form Inputs & Labels */
+      form div {
+        margin-bottom: 15px;
+      }
+
+      label {
+        font-weight: 500;
+        color: white;
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        background: rgba(255, 255, 255, 0.9);
+        outline: none;
+        transition: 0.3s ease-in-out;
+      }
+
+      /* Hover & Focus Effects */
+      input:focus,
+      select:focus,
+      textarea:focus {
+        background: white;
+        box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+      }
+
+      /* Custom Checkboxes & Radio Buttons */
+      input[type="checkbox"],
+      input[type="radio"] {
+        width: auto;
+        margin-right: 8px;
+        transform: scale(1.2);
+        cursor: pointer;
+      }
+
+      /* Buttons Styling */
+      button,
+      input[type="submit"] {
+        background: #222;
+        color: white;
+        border: none;
+        padding: 12px;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 6px;
+        width: 100%;
+        transition: 0.3s ease-in-out;
+      }
+
+      button:hover,
+      input[type="submit"]:hover {
+        background: #ff5e62;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 600px) {
+        fieldset {
+          padding: 20px;
+        }
+
+        legend {
+          font-size: 18px;
+        }
+
+        button,
+        input[type="submit"] {
+          font-size: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <fieldset>
+      <legend>Registration Form</legend>
+      <br />
+      <form>
+        <div>
+          <label>Name:</label>
+          <input
+            type="text"
+            pattern="[a-zA-Z ]{10,40}"
+            placeholder="Enter the Name"
+            name="myName"
+            title="Enter the valid name with any digits in alphabets."
+            id="password"
+            required
+            minlength="15"
+            maxlength="30"
+            size="30"
+          />
+        </div>
+        <br />
+        <div>
+          <label>E-mail Address:</label>
+          <input
+            type="email"
+            pattern="[a-zA-Z ]{10,40}"
+            placeholder="Enter the E-mail"
+            name="myemail"
+            id="email"
+            size="30"
+            required
+          />
+        </div>
+        <br />
+        <div>
+          <label>Password</label>
+          <input
+            type="password"
+            pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@#$%^&+=]).{8,}"
+            title="Password must be at least 8 characters long, include uppercase, lowercase, a number, and a special character (@#$%^&+=)"
+            placeholder="Enter the password"
+            name="mypassword"
+            required
+          />
+        </div>
+        <br />
+        <div>
+          <label>Phone number:</label>
+          <input
+            type="tel"
+            pattern="[0-9]{10}"
+            placeholder="Enter phone number"
+            name="myphone"
+            title="Enter the valid phone number with 10 digits."
+            required
+          />
+        </div>
+        <br />
+        <div>
+          <label>Date of Birth:</label>
+          <input type="Date" name="mydate" required />
+        </div>
+        <br />
+        <div>
+          <label>Time:</label>
+          <input type="time" name="mytime" required />
+        </div>
+        <br />
+        <div>
+          <label>Week:</label>
+          <input type="week" name="myweek" required />
+        </div>
+        <br />
+        <div>
+          <label>Month:</label>
+          <input type="month" name="mymonth" required />
+        </div>
+        <br />
+        <div>
+          <label>URL</label>
+          <input type="url" required />
+        </div>
+        <br />
+        <div>
+          <label>Color:</label>
+          <input type="color" name="mycolor" required />
+        </div>
+        <br />
+        <div>
+          <label>Gender: </label>
+          Male <input type="radio" name="Gender" required /> Female
+          <input type="radio" name="Gender" required />
+        </div>
+        <br />
+        <div>
+          <label>Gender:</label>
+          <select name="Gender" id="gender" required>
+            <option value="disabled selected">Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <br />
+        <div>
+          <label>Are you eligible?:</label>
+          <input type="checkbox" name="myeligibility" required />
+        </div>
+        <br />
+        <div>
+          <label>Experience</label>
+          <input type="range" required />
+        </div>
+        <br />
+        <div>
+          <label>COURSE:</label>
+          PHP<input value="php" type="checkbox" name="salary" required />
+          JAVA<input value="java" type="checkbox" name="salary" required />
+          PYTHON<input value="python" type="checkbox" name="salary" required />
+          C<input value="c" type="checkbox" name="salary" required /> C++<input
+            value="c++"
+            type="checkbox"
+            name="salary"
+            required
+          />
+        </div>
+        <br />
+        <div>
+          <label>Expected Salary:</label>
+          15k<input id="sheet" type="radio" name="salary" /> 25k<input
+            id="sheet"
+            type="radio"
+            name="salary"
+          />
+          50k<input id="sheet" type="radio" name="salary" /> 60k<input
+            id="sheet"
+            type="radio"
+            name="salary"
+          />
+          75k<input id="sheet" type="radio" name="salary" /> 80k<input
+            id="sheet"
+            type="radio"
+            name="salary"
+          />
+        </div>
+        <br />
+        <div>
+          <label>PHOTO</label>
+          <input type="file" required />
+        </div>
+        <br />
+        <div>
+          <label>Country</label>
+          <select>
+            <option value="India">India</option>
+            <option value="Australia ">Australia</option>
+            <option value="Switzerland">SwitzeFrance</option>
+            <option value="France">France</option>
+          </select>
+        </div>
+        <br />
+        <div>
+          <label>Course</label>
+          <select>
+            <optgroup label="Frontend">
+              <option>HTML</option>
+              <option>CSS</option>
+              <option>JAVASCRIPT</option>
+            </optgroup>
+            <optgroup label="Backend">
+              <option>PHP</option>
+              <option>NODE</option>
+              <option>MONGO DB</option>
+            </optgroup>
+          </select>
+        </div>
+        <br />
+        <div>
+          <label>Car</label>
+          <select name="myCar" id="car">
+            <option value="Maruti">Maruti</option>
+            <option value="fortuner">fortuner</option>
+            <option value="Defender">Defender</option>
+          </select>
+        </div>
+        <br />
+        <div>
+          <label>COURSES</label>
+          <input type="text" list="course" />
+          <datalist id="course">
+            <option value="PHP"></option>
+            <option value="Java"></option>
+            <option value="React"></option>
+          </datalist>
+        </div>
+        <br />
+        <div>
+          <label>QUANTITY:</label>
+          <input type="number" min="0" max="50" />
+        </div>
+        <br />
+        <div>
+          Write about yourself:<br />
+          <textarea name="myText" cols="20" rows="5"></textarea>
+        </div>
+        <div>
+          <button type="submit">SAVE</button>
+          <input type="Submit" value="GO" />
+        </div>
+      </form>
+    </fieldset>
+  </body>
+</html>
