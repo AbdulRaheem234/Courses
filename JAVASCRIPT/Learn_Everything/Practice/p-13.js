@@ -1,0 +1,3 @@
+// copy this operator using spread operator
+const original = { a: 1, b: 2 };
+const copy = { ...original };
