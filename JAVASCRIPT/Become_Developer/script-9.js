@@ -1,6 +1,6 @@
 let main = document.querySelector("#main");
 let form = document.querySelector("form");
-let inputs = document.querySelectorAll("input");
+let input = document.querySelectorAll("input");
 form.addEventListener("submit", function (dets) {
   dets.preventDefault();
   let card = document.createElement("div");
@@ -8,16 +8,13 @@ form.addEventListener("submit", function (dets) {
   let profile = document.createElement("div");
   profile.classList.add("profile");
   let img = document.createElement("img");
-  img.setAttribute(
-    "src",
-    "https://plus.unsplash.com/premium_photo-1683121366070-5ceb7e007a97?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D",
-  );
+  img.setAttribute("src", input[0].value);
   let h3 = document.createElement("h3");
-  h3.innerText = "Human";
+  h3.innerText = input[1].value;
   let h5 = document.createElement("h5");
-  h5.textContent = "Web Developer";
+  h5.textContent = input[2].value;
   let p = document.createElement("p");
-  p.textContent = "He is a web designer";
+  p.textContent = input[3].value;
 
   profile.appendChild(img);
   card.appendChild(profile);
@@ -25,4 +22,9 @@ form.addEventListener("submit", function (dets) {
   card.appendChild(h5);
   card.appendChild(p);
   main.appendChild(card);
+  input.forEach(function (inp) {
+    if (inp.type !== "submit") {
+      inp.value = "";
+    }
+  });
 });
