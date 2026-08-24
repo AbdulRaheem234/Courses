@@ -3,7 +3,7 @@ function CreateBiscuits(name, price, qty, company, category) {
   this.price = price;
   this.qty = qty;
   this.company = company;
-  this.category = this.category;
+  this.category = category;
 }
 let biscuits1 = new CreateBiscuits("Oreo", 10, 5, "Cadbury", "Chocolate");
 console.log(biscuits1);

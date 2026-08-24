@@ -9,12 +9,12 @@ console.log(multiply(2, 3));
 
 // sort this array alphabetically and then reverse it
 let name = ["Zara", "Arjun", "Mira", "Bhavya"];
-name.sort().reverse();
-console.log(name);
+name1.sort().reverse();
+console.log(name1);
 
 // use .map() to square each number
 let arr = [1, 2, 3, 4, 5];
-let newArr = arr.map(function (val) {
+let newArr34 = arr.map(function (val) {
   return val * val;
 });
-console.log(newArr);
+console.log(newArr34);

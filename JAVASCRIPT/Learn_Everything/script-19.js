@@ -18,12 +18,13 @@ let BD = {
     pin: 201001,
   },
 };
+console.log(BD);
 // Wrong method
 // let BD2 = { ...BD };
 // BD2.address.city = "Delhi";
 
-// stringify karne se user object string ban jata hai original string aur parse karne se asli ban jaata hai 
-// iska use reference copy se bachne ke liye karte hai 
+// stringify karne se user object string ban jata hai original string aur parse karne se asli ban jaata hai
+// iska use reference copy se bachne ke liye karte hai
 let BD2 = JSON.parse(JSON.stringify(BD));
 BD2.address.city = "Delhi";
 console.log(BD);

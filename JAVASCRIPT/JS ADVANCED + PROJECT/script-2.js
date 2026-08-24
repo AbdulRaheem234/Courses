@@ -1,9 +1,10 @@
 // execution content
-function tyiy() {
+function tyi() {
   var t = 34;
   let y = 84;
   let i = 24;
 }
+tyi();
 
 // lexical scoping - li aap kha par physically available ho ye poori tareke se depend karta hai ki aap kya access kr paoge
 function iwue() {
@@ -11,8 +12,9 @@ function iwue() {
   function uhof() {
     console.log(i);
   }
+  uhof();
 }
-
+iwue();
 // dynamic scoping - kha se call kr rahe ho uspe depend karega ki kya value milegi
 
 let a = 12;

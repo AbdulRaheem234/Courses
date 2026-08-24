@@ -4,6 +4,7 @@ let b = 34;
 function r() {
   console.log("Hello World!....");
 }
+//impure function
 function r1() {
   b++;
 }

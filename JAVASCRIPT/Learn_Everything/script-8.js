@@ -5,3 +5,5 @@ function a() {
     console.log(b);
   };
 }
+let ans = a();
+ans();

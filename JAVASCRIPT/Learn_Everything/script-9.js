@@ -5,6 +5,12 @@ function ab() {
     let b = 20;
     function ef() {
       let c = 30;
+      console.log(a);
+      console.log(b);
+      console.log(c);
     }
+    ef();
   }
+  cd();
 }
+ab();

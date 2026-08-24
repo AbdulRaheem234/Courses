@@ -18,3 +18,4 @@ let arr8 = [10, 34, 35, 98, 25, 78];
 let re = arr8.every(function (vl) {
   return vl > 45;
 });
+console.log(re);

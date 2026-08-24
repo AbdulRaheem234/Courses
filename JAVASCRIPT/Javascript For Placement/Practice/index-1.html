@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Factory Function Product Manager</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      body {
+        background: #f4f7fb;
+        padding: 40px;
+      }
+      h1 {
+        text-align: center;
+        margin-bottom: 30px;
+        color: #222;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        flex-wrap: wrap;
+      }
+      .card {
+        background: #fff;
+        width: 300px;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+      }
+      .card h2 {
+        color: #333;
+        margin-bottom: 8px;
+      }
+      .price {
+        color: #0a8f4d;
+        font-size: 20px;
+        font-weight: bold;
+      }
+      .stock {
+        margin: 15px 0;
+        font-size: 18px;
+        font-weight: bold;
+      }
+      input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        font-size: 15px;
+      }
+      .buttons {
+        display: flex;
+        gap: 10px;
+      }
+      button {
+        flex: 1;
+        padding: 10px;
+        border: none;
+        border-radius: 8px;
+        color: #fff;
+        cursor: pointer;
+        font-weight: bold;
+      }
+      .buy {
+        background: #2563eb;
+      }
+      .buy:hover {
+        background: #1d4ed8;
+      }
+      .refill {
+        background: #16a34a;
+      }
+      .refill:hover {
+        background: #15803d;
+      }
+      .msg {
+        margin-top: 12px;
+        font-size: 14px;
+        min-height: 20px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>📦 Factory Function Product Manager</h1>
+
+    <div class="container" id="products"></div>
+
+    <script>
+      // Factory Function
+      function createProduct(name, price, initialStock = 100) {
+        let stock = initialStock;
+
+        return {
+          name,
+          price,
+
+          getStock() {
+            return stock;
+          },
+
+          buy(qty) {
+            if (qty <= 0) {
+              return "Enter valid quantity!";
+            }
+
+            if (qty <= stock) {
+              stock -= qty;
+              return `✅ ${qty} ${name} booked.`;
+            }
+
+            return `❌ Only ${stock} left.`;
+          },
+
+          refill(qty) {
+            if (qty <= 0) {
+              return "Enter valid quantity!";
+            }
+
+            stock += qty;
+            return `🔄 ${qty} ${name} added.`;
+          },
+        };
+      }
+
+      // Products
+      const products = [
+        createProduct("iPhone 16", 70000, 50),
+        createProduct("KitKat", 10, 200),
+      ];
+
+      const container = document.getElementById("products");
+
+      // UI Create
+      products.forEach((product, index) => {
+        const card = document.createElement("div");
+        card.className = "card";
+
+        card.innerHTML = `
+        <h2>${product.name}</h2>
+        <p class="price">₹${product.price}</p>
+
+        <p class="stock" id="stock${index}">
+            Stock : ${product.getStock()}
+        </p>
+
+        <input type="number" id="qty${index}" placeholder="Enter quantity">
+
+        <div class="buttons">
+            <button class="buy">Buy</button>
+            <button class="refill">Refill</button>
+        </div>
+
+        <p class="msg" id="msg${index}"></p>
+    `;
+
+        container.appendChild(card);
+
+        const qtyInput = card.querySelector("input");
+        const stockText = card.querySelector(".stock");
+        const msg = card.querySelector(".msg");
+
+        // Buy
+        card.querySelector(".buy").addEventListener("click", () => {
+          const qty = Number(qtyInput.value);
+          msg.textContent = product.buy(qty);
+          stockText.textContent = `Stock : ${product.getStock()}`;
+          qtyInput.value = "";
+        });
+
+        // Refill
+        card.querySelector(".refill").addEventListener("click", () => {
+          const qty = Number(qtyInput.value);
+          msg.textContent = product.refill(qty);
+          stockText.textContent = `Stock : ${product.getStock()}`;
+          qtyInput.value = "";
+        });
+      });
+    </script>
+  </body>
+</html>

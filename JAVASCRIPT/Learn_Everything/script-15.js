@@ -4,3 +4,4 @@
 // Spread operator ka matlab ... iska use tab karte hai jab hame purane array ki value ko new array me spread yani bikherna hota hai new array me kuch bhi changes karenge vo purane array me iska kuch bhi asar nhi hoga
 let gh = [78, 34, 67, 23, 68, 89];
 let gh2 = [...gh];
+console.log(gh2);

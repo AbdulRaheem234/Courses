@@ -35,4 +35,3 @@ const bank = (function () {
 bank.getBalance();
 bank.deposit(500);
 bank.getBalance();
-
