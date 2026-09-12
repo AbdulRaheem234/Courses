@@ -3,49 +3,71 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HOME PAGE</title>
+    <title>Lazy Loading Images</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+      body {
+        background: #111;
+        color: #fff;
+      }
+      h1 {
+        text-align: center;
+        padding: 20px;
+      }
+      .spacer {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+      }
+      img {
+        display: block;
+        width: 90%;
+        max-width: 700px;
+        height: 400px;
+        object-fit: cover;
+        margin: 40px auto;
+        border-radius: 12px;
+        filter: blur(8px);
+        transition: 0.5s;
+      }
+      img.loaded {
+        filter: blur(0);
+      }
+    </style>
   </head>
   <body>
-    <b>WELCOME</b>
-    <br /><br /><br />
-    <strong>WELCOME</strong>
-    <hr width="50%" align="left" />
-    <b><i>WELCOME TO HOMEPAGE</i></b>
-    <br />
-    <u>WELCOME</u>
-    <h1>ABOUT US</h1>
-    <p>
-      Master industry-relevant skills with our vernaular online courses. Choose
-      your program , get certified , and open doors to lucrative career
-      opportunities.
-    </p>
-    <h2>ABOUT US</h2>
-    <p>
-      Master industry-relevant skills with our vernaular online courses. Choose
-      your program , get certified , and open doors to lucrative career
-      opportunities.
-    </p>
-    <img
-      src="IMAGE-1.jpg"
-      alt="IMAGE"
-      width="250px"
-      height="150"
-      title="IMAGE"
-    />
-    <h2>OUR COURSES</h2>
-    <ol type="A">
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>JAVASCRIPT</li>
-      <li>BOOTSTRAP</li>
-      <li>REACT</li>
-    </ol>
-    <ul type="circle">
-      <li>PYTHON</li>
-      <li>JAVA</li>
-      <li>PHP</li>
-      <li>MONGO DB</li>
-      <li>ANGULAR.JS</li>
-    </ul>
+    <h1>Lazy Loading with Intersection Observer</h1>
+
+    <div class="spacer">⬇ Scroll Down</div>
+
+    <img data-src="https://picsum.photos/id/1015/700/400" alt="" />
+    <img data-src="https://picsum.photos/id/1025/700/400" alt="" />
+    <img data-src="https://picsum.photos/id/1035/700/400" alt="" />
+    <img data-src="https://picsum.photos/id/1045/700/400" alt="" />
+
+    <script>
+      const images = document.querySelectorAll("img");
+
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src;
+            img.onload = () => img.classList.add("loaded");
+            obs.unobserve(img);
+          }
+        });
+      });
+
+      images.forEach((img) => observer.observe(img));
+    </script>
   </body>
 </html>

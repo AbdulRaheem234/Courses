@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  background: #f4f7fb;
+  padding: 40px;
+}
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #222;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+.card {
+  background: #fff;
+  width: 300px;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+.card h2 {
+  color: #333;
+  margin-bottom: 8px;
+}
+.price {
+  color: #0a8f4d;
+  font-size: 20px;
+  font-weight: bold;
+}
+.stock {
+  margin: 15px 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+}
+.buy {
+  background: #2563eb;
+}
+.buy:hover {
+  background: #1d4ed8;
+}
+.refill {
+  background: #16a34a;
+}
+.refill:hover {
+  background: #15803d;
+}
+.msg {
+  margin-top: 12px;
+  font-size: 14px;
+  min-height: 20px;
+  font-weight: bold;
+}

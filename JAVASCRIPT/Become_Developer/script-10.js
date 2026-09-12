@@ -10,9 +10,13 @@ let btn = document.querySelector("button");
 btn.addEventListener("click", function () {
   console.log("button clicked");
 });
-c.addEventListener("click", function () {
-  console.log("c clicked");
-},true);
+c.addEventListener(
+  "click",
+  function () {
+    console.log("c clicked");
+  },
+  true,
+);
 b.addEventListener("click", function () {
   console.log("b clicked");
 });
